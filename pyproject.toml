@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "viper-summer-school-2026"
+version = "2026.0.0"
+description = "Educational material for the 2026 VIPER Summer School on PTA GW Astrophysics."
+readme = "README.md"
+requires-python = ">=3.9,<3.12"
+license = {text = "MIT"}
+
+authors = [
+    {name = "VIPER Summer School Team"}
+]
+
+dependencies = [
+    "enterprise-pulsar",
+    "enterprise-extensions",
+    "la-forge",
+    "tqdm",
+    "jupyterlab",
+    "ipykernel",
+    "notebook",
+    "defiant @ git+https://github.com/GersbachKa/defiant.git",
+    "holodeck" @ git+https://github.com/nanograv/holodeck.git
+]
+
+[project.optional-dependencies]
+
+dev = [
+    "ruff",
+    "pytest",
+]
+
+docs = [
+    "jupyterlab",
+]
+
+[tool.uv]
+
+[tool.uv.sources]
+
+defiant = { git = "https://github.com/GersbachKa/defiant" }
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
